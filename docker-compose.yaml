@@ -1,0 +1,69 @@
+version: "3.3" 
+services:
+  app:
+    build: 
+      context: ${APP_FOLDER}
+      dockerfile: Dockerfile
+      args:
+        - PORT=3000
+    container_name: gitter-app
+    ports:
+      - "3000:3000"
+    networks:
+      - "gitter"
+    environment:
+      - CODE_API_HOST=code-api
+      - SOCIAL_API_HOST=social-api
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+
+  # code-api:
+  #   build: 
+  #     context: ${CODE_API_FOLDER}
+  #     dockerfile: Dockerfile
+  #     args:
+  #       - PORT=3000
+  #   container_name: code-api
+  #   ports:
+  #     - "3001:3000"
+  #   networks:
+  #     - "gitter"
+  #   environment:
+  #     - host.docker.internal=localhost:8080
+  #     - OPENFAAS_USER=admin
+  #     - OPENFAAS_PASSWORD=<to_set>
+  #     - DB_HOST=host.docker.internal
+  #     - DB_PORT=5432
+  #     - DB_PASSWORD=${INFRA_DB_PASSWORD}
+  #     - DB_NAME=${INFRA_DB_NAME}
+  #     - MINIO_HOST=minio
+  #     - MINIO_PORT=9000
+  #     - MINIO_ACCESS_KEY=minio_admin
+  #     - MINIO_SECRET_KEY=minio1234
+  #   volumes:
+  #     - ./code-api:/app
+
+  # social-api:
+  #   build: 
+  #     context: ${SOCIAL_API_FOLDER}
+  #     dockerfile: Dockerfile
+  #   container_name: social-api
+  #   ports:
+  #     - "3002:8080"
+  #   networks:
+  #     - "gitter"
+  #   environment:
+  #     - DB_HOST=${INFRA_DB_HOST}
+  #     - DB_PORT=${INFRA_DB_PORT}
+  #     - DB_PASSWORD=${INFRA_DB_PASSWORD}
+  #     - DB_NAME=${INFRA_DB_NAME}
+  #   volumes:
+  #     - ./social-api:/app
+
+networks:
+  gitter:
+    driver: bridge
+    ipam:
+      driver: default
