@@ -18,7 +18,9 @@ help: banner ## Show help for all targets
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-30s\033[0m %s\n", $$1, $$2}'
 .PHONY: help
 
-all: clone up
+all: ## Clone repo and run containers
+	$(MAKE) clone
+	$(MAKE) up
 .PHONY: all
 
 clear: ## Clear all generated folders

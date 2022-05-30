@@ -6,64 +6,89 @@ services:
       dockerfile: Dockerfile
       args:
         - PORT=3000
+    entrypoint: npm
+    command: start
     container_name: gitter-app
     ports:
       - "3000:3000"
     networks:
-      - "gitter"
+      - "frontend"
     environment:
-      - CODE_API_HOST=code-api
       - SOCIAL_API_HOST=social-api
       - CHOKIDAR_USEPOLLING=true
     volumes:
       - ./app:/app
       - /app/node_modules
 
-  # code-api:
-  #   build: 
-  #     context: ${CODE_API_FOLDER}
-  #     dockerfile: Dockerfile
-  #     args:
-  #       - PORT=3000
-  #   container_name: code-api
-  #   ports:
-  #     - "3001:3000"
-  #   networks:
-  #     - "gitter"
-  #   environment:
-  #     - host.docker.internal=localhost:8080
-  #     - OPENFAAS_USER=admin
-  #     - OPENFAAS_PASSWORD=<to_set>
-  #     - DB_HOST=host.docker.internal
-  #     - DB_PORT=5432
-  #     - DB_PASSWORD=${INFRA_DB_PASSWORD}
-  #     - DB_NAME=${INFRA_DB_NAME}
-  #     - MINIO_HOST=minio
-  #     - MINIO_PORT=9000
-  #     - MINIO_ACCESS_KEY=minio_admin
-  #     - MINIO_SECRET_KEY=minio1234
-  #   volumes:
-  #     - ./code-api:/app
+  code-api:
+    build: 
+      context: ${CODE_API_FOLDER}
+      dockerfile: Dockerfile
+      args:
+        - PORT=3000
+    entrypoint: "ts-node-dev"
+    command: 
+      - --respawn
+      - main.ts
+    container_name: code-api
+    ports:
+      - "3001:3000"
+    networks:
+      - "backend"
+    environment:
+      - OPENFAAS_URL=<to_set>
+      - OPENFAAS_USER=admin
+      - OPENFAAS_PASSWORD=<to_set>
+      - MINIO_HOST=http://dev.gitter.uk/minio
+      - MINIO_PORT=9000
+      - MINIO_ACCESS_KEY=minio_admin
+      - MINIO_SECRET_KEY=minio1234
+    volumes:
+      - ./code-api:/app
+      - /app/node_modules
+  social-api:
+    build: 
+      context: ${SOCIAL_API_FOLDER}
+      dockerfile: Dockerfile
+    container_name: social-api
+    ports:
+      - "3002:8080"
+    networks:
+      - "backend"
+      - "frontend"
+    depends_on:
+      - social-db
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - APPLICATION_URL=http://localhost:8080
+    volumes:
+      - ./social-api:/app
 
-  # social-api:
-  #   build: 
-  #     context: ${SOCIAL_API_FOLDER}
-  #     dockerfile: Dockerfile
-  #   container_name: social-api
-  #   ports:
-  #     - "3002:8080"
-  #   networks:
-  #     - "gitter"
-  #   environment:
-  #     - DB_HOST=${INFRA_DB_HOST}
-  #     - DB_PORT=${INFRA_DB_PORT}
-  #     - DB_PASSWORD=${INFRA_DB_PASSWORD}
-  #     - DB_NAME=${INFRA_DB_NAME}
-  #   volumes:
-  #     - ./social-api:/app
+  social-db:
+    image: postgres
+    restart: on-failure
+    container_name: social-db
+    hostname:  ${DATABASE_HOSTNAME}
+    networks:
+      - "backend"
+    ports:
+      - "${DATABASE_PORT}:5432"
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
+    volumes:
+      - ./data:/var/lib/postgresql/data
 
 networks:
-  gitter:
+  frontend:
+    driver: bridge
+    ipam:
+      driver: default
+  backend:
     driver: bridge
     ipam:
       driver: default
