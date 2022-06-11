@@ -13,6 +13,9 @@ CODE_API_REPO=git@github.com:gitter-flow/code-api.git
 CODE_API_FOLDER=code-api
 SOCIAL_API_REPO=git@github.com:gitter-flow/social-api.git
 SOCIAL_API_FOLDER=social-api
+KEYCLOAK_EVENT_LISTENER_REPO=https://github.com/gitter-flow/keycloak-event-listener
+KEYCLOAK_EVENT_LISTENER_FOLDER=keycloak-event-listener
+
 
 help: banner ## Show help for all targets
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-30s\033[0m %s\n", $$1, $$2}'
@@ -35,6 +38,7 @@ clone: ## Clone Gitter repositories
 	$(MAKE) _clone REPO=$(APP_REPO) DIR=$(APP_FOLDER)
 	$(MAKE) _clone REPO=$(CODE_API_REPO) DIR=$(CODE_API_FOLDER)
 	$(MAKE) _clone REPO=$(SOCIAL_API_REPO) DIR=$(SOCIAL_API_FOLDER)
+	$(MAKE) _clone REPO=$(KEYCLOAK_EVENT_LISTENER_REPO) DIR=$(KEYCLOAK_EVENT_LISTENER_FOLDER)
 .PHONY: clone
 
 clear-repo: ## Remove cloned repositories

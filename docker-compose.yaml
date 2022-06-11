@@ -19,6 +19,7 @@ services:
     volumes:
       - ./app:/app
       - /app/node_modules
+      - ./configs/gitter-app/keycloak.json:/app/public/keycloak.json
 
   code-api:
     build: 
@@ -46,13 +47,66 @@ services:
     volumes:
       - ./code-api:/app
       - /app/node_modules
+  minio:
+    image: quay.io/minio/minio
+    command: server --console-address ":9001" /data
+    expose:
+      - "9000"
+      - "9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - ./data/minio:/data
+
+  keycloak:
+    image: jboss/keycloak
+    container_name: keycloak
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: keycloak-db
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_PASSWORD: password
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: password
+      KEYCLOAK_IMPORT: /opt/jboss/keycloak/imports/realm.json
+      SOCIAL_API_URL: http://social-api:8081
+    volumes:
+      - ./keycloak-event-listener/target/keycloak-event-listener-0.0.1.jar:/opt/jboss/keycloak/standalone/deployments/keycloak-event-listener-0.0.1.jar
+      - ./configs/keycloak/realm.json:/opt/jboss/keycloak/imports/realm.json
+    depends_on:
+      - keycloak-db
+    networks:
+      - "backend"
+    ports:
+      - 8080:8080
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+  keycloak-db:
+    image: postgres
+    restart: on-failure
+    container_name: keycloak-db
+    hostname: keycloak-db 
+    networks:
+      - "backend"
+    ports:
+      - "5431:5432"
+    environment:
+      - POSTGRES_USER=keycloak
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=keycloak
+    volumes:
+      - ./data/keycloak:/var/lib/postgresql/data
+
   social-api:
     build: 
       context: ${SOCIAL_API_FOLDER}
       dockerfile: Dockerfile
     container_name: social-api
     ports:
-      - "3002:8080"
+      - "3002:8081"
     networks:
       - "backend"
       - "frontend"
@@ -63,7 +117,12 @@ services:
       - DATABASE_USER=${DATABASE_USER}
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - DATABASE_NAME=${DATABASE_NAME}
-      - APPLICATION_URL=http://localhost:8080
+      - APPLICATION_URL=http://localhost:8081
+      - KEYCLOAK_REALM_NAME=gitter
+      - KEYCLOAK_SERVER_URL=http://keycloak:8080/auth
+      - KEYCLOAK_CLIENT_ID=social-api
+      - KEYCLOAK_CLIENT_SECRET=mNYslEw3SyItrGaytdxY5LFxIH42ACgc
+      - SERVER_PORT=8081
     volumes:
       - ./social-api:/app
 
@@ -81,7 +140,7 @@ services:
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_DB=${DATABASE_NAME}
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./data/social:/var/lib/postgresql/data
 
 networks:
   frontend:
@@ -92,3 +151,4 @@ networks:
     driver: bridge
     ipam:
       driver: default
+

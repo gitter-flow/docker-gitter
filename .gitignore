@@ -2,3 +2,4 @@ app
 code-api
 social-api
 data
+keycloak-event-listener
