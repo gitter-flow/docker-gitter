@@ -1,5 +1,23 @@
 version: "3.3" 
 services:
+  traefik:
+    image: "traefik:v2.7"
+    container_name: "traefik"
+    networks:
+      - backend
+      - frontend
+    command:
+      - "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+      - "8082:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
   app:
     build: 
       context: ${APP_FOLDER}
@@ -9,10 +27,14 @@ services:
     entrypoint: npm
     command: start
     container_name: gitter-app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.gitter-app.rule=Host(`app.gitter.localhost`)"
+      - "traefik.http.routers.gitter-app.entrypoints=web"
     ports:
       - "3000:3000"
     networks:
-      - "frontend"
+      - frontend
     environment:
       - SOCIAL_API_HOST=social-api
       - CHOKIDAR_USEPOLLING=true
@@ -49,6 +71,7 @@ services:
       - /app/node_modules
   minio:
     image: quay.io/minio/minio
+    container_name: minio
     command: server --console-address ":9001" /data
     expose:
       - "9000"
@@ -60,29 +83,40 @@ services:
       - ./data/minio:/data
 
   keycloak:
-    image: jboss/keycloak
+    build:
+      context: keycloak
     container_name: keycloak
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.keycloak.rule=Host(`api.gitter.localhost`) && PathPrefix(`/auth`)"
+      - "traefik.http.routers.keycloak.entrypoints=web"
+    command: 
+      - 'start-dev'
+      - '--log-level=debug'
+      - '--http-port=8080'
+      - '--http-relative-path=/auth'
+      - '--http-enabled=true'
+      - '--hostname-strict-https=false'
+      - '--hostname-strict=false'
+      - '--db=postgres'
+      - '--db-url=jdbc:postgresql://keycloak-db/keycloak'
+      - '--db-username=keycloak'
+      - '--db-password=password'
     environment:
-      DB_VENDOR: POSTGRES
-      DB_ADDR: keycloak-db
-      DB_DATABASE: keycloak
-      DB_USER: keycloak
-      DB_PASSWORD: password
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: password
-      KEYCLOAK_IMPORT: /opt/jboss/keycloak/imports/realm.json
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: password
       SOCIAL_API_URL: http://social-api:8081
+      PROXY_ADDRESS_FORWARDING: true
+      KEYCLOAK_FRONTEND_URL: http://gitter.localhost/auth
     volumes:
       - ./keycloak-event-listener/target/keycloak-event-listener-0.0.1.jar:/opt/jboss/keycloak/standalone/deployments/keycloak-event-listener-0.0.1.jar
-      - ./configs/keycloak/realm.json:/opt/jboss/keycloak/imports/realm.json
+      - ./keycloak/realm.json:/opt/keycloak_import/realm.json
     depends_on:
       - keycloak-db
     networks:
-      - "backend"
+      - backend
     ports:
       - 8080:8080
-    extra_hosts:
-      - host.docker.internal:host-gateway
 
   keycloak-db:
     image: postgres
@@ -90,7 +124,7 @@ services:
     container_name: keycloak-db
     hostname: keycloak-db 
     networks:
-      - "backend"
+      - backend
     ports:
       - "5431:5432"
     environment:
@@ -105,11 +139,15 @@ services:
       context: ${SOCIAL_API_FOLDER}
       dockerfile: Dockerfile
     container_name: social-api
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.social-api.rule=Host(`api.gitter.localhost`)"
+      - "traefik.http.routers.social-api.entrypoints=web"
     ports:
       - "3002:8081"
     networks:
-      - "backend"
-      - "frontend"
+      - backend
+      - frontend
     depends_on:
       - social-db
     environment:
@@ -117,15 +155,16 @@ services:
       - DATABASE_USER=${DATABASE_USER}
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - DATABASE_NAME=${DATABASE_NAME}
-      - APPLICATION_URL=http://localhost:8081
+      - APPLICATION_URL=http://localhost:3002
       - KEYCLOAK_REALM_NAME=gitter
       - KEYCLOAK_SERVER_URL=http://keycloak:8080/auth
-      - KEYCLOAK_CLIENT_ID=social-api
-      - KEYCLOAK_CLIENT_SECRET=mNYslEw3SyItrGaytdxY5LFxIH42ACgc
+      - KEYCLOAK_CLIENT_ID=api-social
+      - KEYCLOAK_CLIENT_SECRET=h8lCO4plzKFfsong2crbHl7y1fhCykpl
       - SERVER_PORT=8081
+      - LOG_LEVEL=DEBUG
     volumes:
       - ./social-api:/app
-
+      
   social-db:
     image: postgres
     restart: on-failure
@@ -149,6 +188,3 @@ networks:
       driver: default
   backend:
     driver: bridge
-    ipam:
-      driver: default
-

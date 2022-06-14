@@ -1,6 +1,6 @@
 {
     "realm": "gitter",
-    "auth-server-url": "http://localhost:8080/auth/",
+    "auth-server-url": "http://api.gitter.localhost/auth/",
     "ssl-required": "external",
     "resource": "react-app-auth",
     "public-client": true,
