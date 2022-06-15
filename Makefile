@@ -17,6 +17,11 @@ KEYCLOAK_EVENT_LISTENER_REPO=https://github.com/gitter-flow/keycloak-event-liste
 KEYCLOAK_EVENT_LISTENER_FOLDER=keycloak-event-listener
 
 
+KC_CLIENT_ID=api-social
+KC_CLIENT_SECRET=h8lCO4plzKFfsong2crbHl7y1fhCykpl
+KC_USERNAME=pbarrie
+KC_PASSWORD=password
+
 help: banner ## Show help for all targets
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-30s\033[0m %s\n", $$1, $$2}'
 .PHONY: help
@@ -74,3 +79,13 @@ banner:
 	@cat .assets/banner.txt
 .PHONY: banner
 
+token:
+	@curl -s \
+	-d "client_id=$(KC_CLIENT_ID)" \
+	-d "client_secret=$(KC_CLIENT_SECRET)" \
+	-d "grant_type=password" \
+	-d "username=$(KC_USERNAME)" \
+	-d "password=$(KC_PASSWORD)" \
+	-d "scope=openid" \
+	"http://gitter.localhost/auth/realms/gitter/protocol/openid-connect/token" | jq -r .access_token
+.PHONY: token

@@ -29,7 +29,7 @@ services:
     container_name: gitter-app
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.gitter-app.rule=Host(`app.gitter.localhost`)"
+      - "traefik.http.routers.gitter-app.rule=Host(`gitter.localhost`)"
       - "traefik.http.routers.gitter-app.entrypoints=web"
     ports:
       - "3000:3000"
@@ -83,21 +83,20 @@ services:
       - ./data/minio:/data
 
   keycloak:
-    build:
-      context: keycloak
+    image: quay.io/keycloak/keycloak:18.0.0
     container_name: keycloak
+    hostname: gitter.localhost
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.keycloak.rule=Host(`api.gitter.localhost`) && PathPrefix(`/auth`)"
+      - "traefik.http.routers.keycloak.rule=Host(`gitter.localhost`) && PathPrefix(`/auth`)"
       - "traefik.http.routers.keycloak.entrypoints=web"
     command: 
       - 'start-dev'
-      - '--log-level=debug'
+      - '--log-level=info'
+      - '--hostname=gitter.localhost'
       - '--http-port=8080'
       - '--http-relative-path=/auth'
       - '--http-enabled=true'
-      - '--hostname-strict-https=false'
-      - '--hostname-strict=false'
       - '--db=postgres'
       - '--db-url=jdbc:postgresql://keycloak-db/keycloak'
       - '--db-username=keycloak'
@@ -107,9 +106,8 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: password
       SOCIAL_API_URL: http://social-api:8081
       PROXY_ADDRESS_FORWARDING: true
-      KEYCLOAK_FRONTEND_URL: http://gitter.localhost/auth
     volumes:
-      - ./keycloak-event-listener/target/keycloak-event-listener-0.0.1.jar:/opt/jboss/keycloak/standalone/deployments/keycloak-event-listener-0.0.1.jar
+      - ./keycloak-event-listener/target/keycloak-event-listener-0.0.1.jar:/opt/keycloak/providers/keycloak-event-listener-0.0.1.jar
       - ./keycloak/realm.json:/opt/keycloak_import/realm.json
     depends_on:
       - keycloak-db
@@ -157,11 +155,12 @@ services:
       - DATABASE_NAME=${DATABASE_NAME}
       - APPLICATION_URL=http://localhost:3002
       - KEYCLOAK_REALM_NAME=gitter
-      - KEYCLOAK_SERVER_URL=http://keycloak:8080/auth
+      - KEYCLOAK_SERVER_URL=http://gitter.localhost/auth
+      - KEYCLOAK_PROXY_URL=http://traefik:80
       - KEYCLOAK_CLIENT_ID=api-social
       - KEYCLOAK_CLIENT_SECRET=h8lCO4plzKFfsong2crbHl7y1fhCykpl
       - SERVER_PORT=8081
-      - LOG_LEVEL=DEBUG
+      - LOG_LEVEL=INFO
     volumes:
       - ./social-api:/app
       
