@@ -13,7 +13,7 @@ CODE_API_REPO=git@github.com:gitter-flow/code-api.git
 CODE_API_FOLDER=code-api
 SOCIAL_API_REPO=git@github.com:gitter-flow/social-api.git
 SOCIAL_API_FOLDER=social-api
-KEYCLOAK_EVENT_LISTENER_REPO=https://github.com/gitter-flow/keycloak-event-listener
+KEYCLOAK_EVENT_LISTENER_REPO=git@github.com:gitter-flow/keycloak-event-listener.git
 KEYCLOAK_EVENT_LISTENER_FOLDER=keycloak-event-listener
 
 
