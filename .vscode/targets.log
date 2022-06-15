@@ -1,0 +1,1289 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+/Applications/Xcode.app/Contents/Developer/usr/bin/make clone
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+/Applications/Xcode.app/Contents/Developer/usr/bin/make _clone REPO=git@github.com:gitter-flow/app.git DIR=app
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+
+# Make data base, printed on Thu Jun 16 19:23:09 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 23)
+KC_PASSWORD = password
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile
+CURDIR := /Users/fred/Documents/ESGI/PA_4/docker-gitter
+# makefile (from `Makefile', line 7)
+SHELL := /bin/bash
+# environment
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"575d78304484aa5fa0cbb32d34fd883d.fr","_translationsConfigFile":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/tcf.json","_cacheRoot":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr","_resolvedLanguagePackCoreLocation":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/corrupted.info","_languagePackSupport":true}
+# makefile (from `variables.env', line 4)
+DATABASE_HOSTNAME = social-db
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 15)
+SOCIAL_API_FOLDER = social-api
+# makefile (from `variables.env', line 1)
+MAKEFILE_LIST :=  Makefile variables.env
+# makefile (from `Makefile', line 16)
+KEYCLOAK_EVENT_LISTENER_REPO = https://github.com/gitter-flow/keycloak-event-listener
+# makefile (from `variables.env', line 9)
+DATABASE_URL = jdbc:postgresql://social-db:5432/gitter
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# makefile (from `Makefile', line 13)
+CODE_API_FOLDER = code-api
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/l4/35c81hpn2l19cff_l8xtkjfm0000gn/T/vscode-ipc-408f17c9-f746-465b-8057-3af11c46d138.sock
+# makefile (from `Makefile', line 10)
+APP_REPO = git@github.com:gitter-flow/app.git
+# environment
+VSCODE_CWD = /
+# makefile (from `variables.env', line 7)
+DATABASE_PASSWORD = gitter123
+# environment
+PATH = /usr/local/mysql/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/fred/.cargo/bin:/Users/fred/bin:/Users/fred/bin/apache-maven-3.6.3/bin/
+# makefile (from `Makefile', line 8)
+ENV_FILE = variables.env
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# command line
+DIR = app
+# makefile (from `variables.env', line 6)
+DATABASE_USER = gitter
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Z5AMMCjIef/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = /private/tmp/com.apple.launchd.Uzbh2l46ce/org.macosforge.xquartz:0
+# environment
+VSCODE_PIPE_LOGGING = true
+# makefile (from `variables.env', line 8)
+DATABASE_NAME = gitter
+# environment
+PWD = /Users/fred/Documents/ESGI/PA_4/docker-gitter
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/fred
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/fred/Library/Application Support/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+# environment
+LOGNAME = fred
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# makefile (from `Makefile', line 20)
+KC_CLIENT_ID = api-social
+# environment
+XPC_FLAGS = 0x0
+# makefile (from `variables.env', line 5)
+DATABASE_PORT = 5432
+# default
+MAKECMDGOALS := _clone
+# environment
+SHLVL = 1
+# makefile (from `Makefile', line 14)
+SOCIAL_API_REPO = git@github.com:gitter-flow/social-api.git
+# environment
+MAKEOVERRIDES = ${-*-command-variables-*-}
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = fred
+# makefile (from `Makefile', line 6)
+.DEFAULT_GOAL := help
+# default
+MAKE = $(MAKE_COMMAND)
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# makefile (from `Makefile', line 17)
+KEYCLOAK_EVENT_LISTENER_FOLDER = keycloak-event-listener
+# makefile (from `Makefile', line 12)
+CODE_API_REPO = git@github.com:gitter-flow/code-api.git
+# makefile (from `Makefile', line 21)
+KC_CLIENT_SECRET = h8lCO4plzKFfsong2crbHl7y1fhCykpl
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/l4/35c81hpn2l19cff_l8xtkjfm0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/fred/Library/Application Support/Code/1.68.0-main.sock
+# command line
+REPO = git@github.com:gitter-flow/app.git
+# makefile (from `Makefile', line 22)
+KC_USERNAME = pbarrie
+# makefile
+MAKEFLAGS = Rrqp -- $(MAKEOVERRIDES)
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.92643925.92643931
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from `Makefile', line 11)
+APP_FOLDER = app
+# automatic
+-*-command-variables-*- := DIR=app REPO=git@github.com:gitter-flow/app.git
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x1
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# environment
+REPLICATOR_HOME = /Users/fred/OneDrive/ESGI/Annee2/ProjetC/back/migrator
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 2
+# environment
+LANG = C
+# environment
+VSCODE_PID = 29245
+# variable set hash-table stats:
+# Load=87/1024=8%, Rehash=0, Collisions=5/145=3%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777223, inode 90082389): 19 files, no impossibilities.
+
+# 19 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+clear:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 35):
+	@rm -rf $(INFRASTRUCTURE_API_FOLDER)
+	
+
+all:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 30):
+	$(MAKE) clone
+	$(MAKE) up
+	
+
+rm:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 54):
+	@docker-compose rm
+	
+
+.PHONY: help all clear _clone clone clear-repo rm up ps logs nuke-containers .env banner token
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+
+banner:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 79):
+	@cat .assets/banner.txt
+	
+
+.SECONDARY: main-build
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+up:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 58):
+	$(MAKE) env
+	@docker compose up -V -d --build
+	
+
+# Not a target:
+main-build:
+#  Implicit rule search has not been done.
+#  File is an intermediate prerequisite.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+_clone:
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := _clone
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  commands to execute (from `Makefile', line 39):
+	@git clone $(REPO) $(DIR)
+	
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-16 18:27:32
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+nuke-containers:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 71):
+	@docker rm -f $(docker ps -aq)
+	
+
+.env:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+token:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 83):
+	@curl -s \
+	-d "client_id=$(KC_CLIENT_ID)" \
+	-d "client_secret=$(KC_CLIENT_SECRET)" \
+	-d "grant_type=password" \
+	-d "username=$(KC_USERNAME)" \
+	-d "password=$(KC_PASSWORD)" \
+	-d "scope=openid" \
+	"http://gitter.localhost/auth/realms/gitter/protocol/openid-connect/token" | jq -r .access_token
+	
+
+help: banner
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 26):
+	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-30s\033[0m %s\n", $$1, $$2}'
+	
+
+clone:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 43):
+	$(MAKE) _clone REPO=$(APP_REPO) DIR=$(APP_FOLDER)
+	$(MAKE) _clone REPO=$(CODE_API_REPO) DIR=$(CODE_API_FOLDER)
+	$(MAKE) _clone REPO=$(SOCIAL_API_REPO) DIR=$(SOCIAL_API_FOLDER)
+	$(MAKE) _clone REPO=$(KEYCLOAK_EVENT_LISTENER_REPO) DIR=$(KEYCLOAK_EVENT_LISTENER_FOLDER)
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+variables.env:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-31 20:32:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+logs:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 67):
+	@docker compose logs -f $(SVC)
+	
+
+clear-repo:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 50):
+	@rm -rf $(APP_FOLDER) $(CODE_API_FOLDER) $(SOCIAL_API_FOLDER)
+	
+
+ps: banner
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 63):
+	@docker compose ps
+	
+
+env:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 75):
+	@set -a && source $(ENV_FILE)
+	
+
+# files hash-table stats:
+# Load=22/1024=2%, Rehash=0, Collisions=0/67=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 2
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4073 / max = 4073 / min = 4073 / avg = 4073
+
+# Finished Make data base on Thu Jun 16 19:23:09 2022
+
+
+# Make data base, printed on Thu Jun 16 19:23:09 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 23)
+KC_PASSWORD = password
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile
+CURDIR := /Users/fred/Documents/ESGI/PA_4/docker-gitter
+# makefile (from `Makefile', line 7)
+SHELL := /bin/bash
+# environment
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"575d78304484aa5fa0cbb32d34fd883d.fr","_translationsConfigFile":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/tcf.json","_cacheRoot":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr","_resolvedLanguagePackCoreLocation":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/corrupted.info","_languagePackSupport":true}
+# makefile (from `variables.env', line 4)
+DATABASE_HOSTNAME = social-db
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 15)
+SOCIAL_API_FOLDER = social-api
+# makefile (from `variables.env', line 1)
+MAKEFILE_LIST :=  Makefile variables.env
+# makefile (from `Makefile', line 16)
+KEYCLOAK_EVENT_LISTENER_REPO = https://github.com/gitter-flow/keycloak-event-listener
+# makefile (from `variables.env', line 9)
+DATABASE_URL = jdbc:postgresql://social-db:5432/gitter
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# makefile (from `Makefile', line 13)
+CODE_API_FOLDER = code-api
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/l4/35c81hpn2l19cff_l8xtkjfm0000gn/T/vscode-ipc-408f17c9-f746-465b-8057-3af11c46d138.sock
+# makefile (from `Makefile', line 10)
+APP_REPO = git@github.com:gitter-flow/app.git
+# environment
+VSCODE_CWD = /
+# makefile (from `variables.env', line 7)
+DATABASE_PASSWORD = gitter123
+# environment
+PATH = /usr/local/mysql/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/fred/.cargo/bin:/Users/fred/bin:/Users/fred/bin/apache-maven-3.6.3/bin/
+# makefile (from `Makefile', line 8)
+ENV_FILE = variables.env
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# makefile (from `variables.env', line 6)
+DATABASE_USER = gitter
+# environment
+ 
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Z5AMMCjIef/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = /private/tmp/com.apple.launchd.Uzbh2l46ce/org.macosforge.xquartz:0
+# environment
+VSCODE_PIPE_LOGGING = true
+# makefile (from `variables.env', line 8)
+DATABASE_NAME = gitter
+# environment
+PWD = /Users/fred/Documents/ESGI/PA_4/docker-gitter
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/fred
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/fred/Library/Application Support/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+# environment
+LOGNAME = fred
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# makefile (from `Makefile', line 20)
+KC_CLIENT_ID = api-social
+# environment
+XPC_FLAGS = 0x0
+# makefile (from `variables.env', line 5)
+DATABASE_PORT = 5432
+# default
+MAKECMDGOALS := clone
+# environment
+SHLVL = 1
+# makefile (from `Makefile', line 14)
+SOCIAL_API_REPO = git@github.com:gitter-flow/social-api.git
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = fred
+# makefile (from `Makefile', line 6)
+.DEFAULT_GOAL := help
+# default
+MAKE = $(MAKE_COMMAND)
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# makefile (from `Makefile', line 17)
+KEYCLOAK_EVENT_LISTENER_FOLDER = keycloak-event-listener
+# makefile (from `Makefile', line 12)
+CODE_API_REPO = git@github.com:gitter-flow/code-api.git
+# makefile (from `Makefile', line 21)
+KC_CLIENT_SECRET = h8lCO4plzKFfsong2crbHl7y1fhCykpl
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/l4/35c81hpn2l19cff_l8xtkjfm0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/fred/Library/Application Support/Code/1.68.0-main.sock
+# makefile (from `Makefile', line 22)
+KC_USERNAME = pbarrie
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.92643925.92643931
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from `Makefile', line 11)
+APP_FOLDER = app
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x1
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# environment
+REPLICATOR_HOME = /Users/fred/OneDrive/ESGI/Annee2/ProjetC/back/migrator
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 1
+# environment
+LANG = C
+# environment
+VSCODE_PID = 29245
+# variable set hash-table stats:
+# Load=83/1024=8%, Rehash=0, Collisions=7/155=5%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777223, inode 90082389): 19 files, no impossibilities.
+
+# 19 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+clear:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 35):
+	@rm -rf $(INFRASTRUCTURE_API_FOLDER)
+	
+
+all:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 30):
+	$(MAKE) clone
+	$(MAKE) up
+	
+
+rm:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 54):
+	@docker-compose rm
+	
+
+.PHONY: help all clear _clone clone clear-repo rm up ps logs nuke-containers .env banner token
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+banner:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 79):
+	@cat .assets/banner.txt
+	
+
+.SECONDARY: main-build
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+up:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 58):
+	$(MAKE) env
+	@docker compose up -V -d --build
+	
+
+# Not a target:
+main-build:
+#  Implicit rule search has not been done.
+#  File is an intermediate prerequisite.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+_clone:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 39):
+	@git clone $(REPO) $(DIR)
+	
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-16 18:27:32
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+nuke-containers:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 71):
+	@docker rm -f $(docker ps -aq)
+	
+
+.env:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+token:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 83):
+	@curl -s \
+	-d "client_id=$(KC_CLIENT_ID)" \
+	-d "client_secret=$(KC_CLIENT_SECRET)" \
+	-d "grant_type=password" \
+	-d "username=$(KC_USERNAME)" \
+	-d "password=$(KC_PASSWORD)" \
+	-d "scope=openid" \
+	"http://gitter.localhost/auth/realms/gitter/protocol/openid-connect/token" | jq -r .access_token
+	
+
+help: banner
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 26):
+	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-30s\033[0m %s\n", $$1, $$2}'
+	
+
+clone:
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# automatic
+# @ := clone
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=8/26=31%
+#  commands to execute (from `Makefile', line 43):
+	$(MAKE) _clone REPO=$(APP_REPO) DIR=$(APP_FOLDER)
+	$(MAKE) _clone REPO=$(CODE_API_REPO) DIR=$(CODE_API_FOLDER)
+	$(MAKE) _clone REPO=$(SOCIAL_API_REPO) DIR=$(SOCIAL_API_FOLDER)
+	$(MAKE) _clone REPO=$(KEYCLOAK_EVENT_LISTENER_REPO) DIR=$(KEYCLOAK_EVENT_LISTENER_FOLDER)
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+variables.env:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-31 20:32:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+logs:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 67):
+	@docker compose logs -f $(SVC)
+	
+
+clear-repo:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+ 
+make[1]: *** [clone] Error 1
+
+#  commands to execute (from `Makefile', line 50):
+	@rm -rf $(APP_FOLDER) $(CODE_API_FOLDER) $(SOCIAL_API_FOLDER)
+	
+
+ps: banner
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 63):
+	@docker compose ps
+	
+
+env:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 75):
+	@set -a && source $(ENV_FILE)
+	
+
+# files hash-table stats:
+# Load=22/1024=2%, Rehash=0, Collisions=0/68=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 2
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4073 / max = 4073 / min = 4073 / avg = 4073
+
+# Finished Make data base on Thu Jun 16 19:23:09 2022
+
+
+# Make data base, printed on Thu Jun 16 19:23:09 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 23)
+KC_PASSWORD = password
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/fred/Documents/ESGI/PA_4/docker-gitter
+# makefile (from `Makefile', line 7)
+SHELL := /bin/bash
+# environment
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"575d78304484aa5fa0cbb32d34fd883d.fr","_translationsConfigFile":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/tcf.json","_cacheRoot":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr","_resolvedLanguagePackCoreLocation":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/Users/fred/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/corrupted.info","_languagePackSupport":true}
+# makefile (from `variables.env', line 4)
+DATABASE_HOSTNAME = social-db
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 15)
+SOCIAL_API_FOLDER = social-api
+# makefile (from `variables.env', line 1)
+MAKEFILE_LIST :=  Makefile variables.env
+# makefile (from `Makefile', line 20)
+KC_CLIENT_ID = api-social
+# makefile (from `Makefile', line 16)
+KEYCLOAK_EVENT_LISTENER_REPO = https://github.com/gitter-flow/keycloak-event-listener
+# makefile (from `variables.env', line 9)
+DATABASE_URL = jdbc:postgresql://social-db:5432/gitter
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# makefile (from `Makefile', line 13)
+CODE_API_FOLDER = code-api
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/l4/35c81hpn2l19cff_l8xtkjfm0000gn/T/vscode-ipc-408f17c9-f746-465b-8057-3af11c46d138.sock
+# makefile (from `Makefile', line 10)
+APP_REPO = git@github.com:gitter-flow/app.git
+# environment
+VSCODE_CWD = /
+# makefile (from `variables.env', line 7)
+DATABASE_PASSWORD = gitter123
+# environment
+PATH = /usr/local/mysql/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/fred/.cargo/bin:/Users/fred/bin:/Users/fred/bin/apache-maven-3.6.3/bin/
+# makefile (from `Makefile', line 8)
+ENV_FILE = variables.env
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# makefile (from `variables.env', line 6)
+DATABASE_USER = gitter
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Z5AMMCjIef/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = /private/tmp/com.apple.launchd.Uzbh2l46ce/org.macosforge.xquartz:0
+# environment
+VSCODE_PIPE_LOGGING = true
+# makefile (from `variables.env', line 8)
+DATABASE_NAME = gitter
+# environment
+PWD = /Users/fred/Documents/ESGI/PA_4/docker-gitter
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/fred
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/fred/Library/Application Support/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+# environment
+LOGNAME = fred
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# makefile (from `Makefile', line 14)
+SOCIAL_API_REPO = git@github.com:gitter-flow/social-api.git
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = fred
+# makefile (from `Makefile', line 6)
+.DEFAULT_GOAL := help
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# makefile (from `Makefile', line 17)
+KEYCLOAK_EVENT_LISTENER_FOLDER = keycloak-event-listener
+# makefile (from `Makefile', line 12)
+CODE_API_REPO = git@github.com:gitter-flow/code-api.git
+# makefile (from `Makefile', line 21)
+KC_CLIENT_SECRET = h8lCO4plzKFfsong2crbHl7y1fhCykpl
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/l4/35c81hpn2l19cff_l8xtkjfm0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/fred/Library/Application Support/Code/1.68.0-main.sock
+# makefile (from `Makefile', line 22)
+KC_USERNAME = pbarrie
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.92643925.92643931
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from `Makefile', line 11)
+APP_FOLDER = app
+# makefile (from `variables.env', line 5)
+DATABASE_PORT = 5432
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x1
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# environment
+REPLICATOR_HOME = /Users/fred/OneDrive/ESGI/Annee2/ProjetC/back/migrator
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 29245
+# variable set hash-table stats:
+# Load=83/1024=8%, Rehash=0, Collisions=3/119=3%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777223, inode 90082389): 19 files, no impossibilities.
+
+# 19 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+clear:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 35):
+	@rm -rf $(INFRASTRUCTURE_API_FOLDER)
+	
+
+all:
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# automatic
+# @ := all
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/14=21%
+#  commands to execute (from `Makefile', line 30):
+	$(MAKE) clone
+	$(MAKE) up
+	
+
+rm:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 54):
+	@docker-compose rm
+	
+
+.PHONY: help all clear _clone clone clear-repo rm up ps logs nuke-containers .env banner token
+ 
+make: *** [all] Error 2
+
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+banner:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 79):
+	@cat .assets/banner.txt
+	
+
+.SECONDARY: main-build
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+up:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 58):
+	$(MAKE) env
+	@docker compose up -V -d --build
+	
+
+# Not a target:
+main-build:
+#  Implicit rule search has not been done.
+#  File is an intermediate prerequisite.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+_clone:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 39):
+	@git clone $(REPO) $(DIR)
+	
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-16 18:27:32
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+nuke-containers:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 71):
+	@docker rm -f $(docker ps -aq)
+	
+
+.env:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+token:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 83):
+	@curl -s \
+	-d "client_id=$(KC_CLIENT_ID)" \
+	-d "client_secret=$(KC_CLIENT_SECRET)" \
+	-d "grant_type=password" \
+	-d "username=$(KC_USERNAME)" \
+	-d "password=$(KC_PASSWORD)" \
+	-d "scope=openid" \
+	"http://gitter.localhost/auth/realms/gitter/protocol/openid-connect/token" | jq -r .access_token
+	
+
+help: banner
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 26):
+	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-30s\033[0m %s\n", $$1, $$2}'
+	
+
+clone:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 43):
+	$(MAKE) _clone REPO=$(APP_REPO) DIR=$(APP_FOLDER)
+	$(MAKE) _clone REPO=$(CODE_API_REPO) DIR=$(CODE_API_FOLDER)
+	$(MAKE) _clone REPO=$(SOCIAL_API_REPO) DIR=$(SOCIAL_API_FOLDER)
+	$(MAKE) _clone REPO=$(KEYCLOAK_EVENT_LISTENER_REPO) DIR=$(KEYCLOAK_EVENT_LISTENER_FOLDER)
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+variables.env:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-31 20:32:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+logs:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 67):
+	@docker compose logs -f $(SVC)
+	
+
+clear-repo:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 50):
+	@rm -rf $(APP_FOLDER) $(CODE_API_FOLDER) $(SOCIAL_API_FOLDER)
+	
+
+ps: banner
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 63):
+	@docker compose ps
+	
+
+env:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 75):
+	@set -a && source $(ENV_FILE)
+	
+
+# files hash-table stats:
+# Load=22/1024=2%, Rehash=0, Collisions=0/68=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 2
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4073 / max = 4073 / min = 4073 / avg = 4073
+
+# Finished Make data base on Thu Jun 16 19:23:09 2022
+
+ 
