@@ -62,10 +62,12 @@ services:
       - OPENFAAS_URL=<to_set>
       - OPENFAAS_USER=admin
       - OPENFAAS_PASSWORD=<to_set>
-      - MINIO_HOST=http://dev.gitter.uk/minio
-      - MINIO_PORT=9000
-      - MINIO_ACCESS_KEY=minio_admin
-      - MINIO_SECRET_KEY=minio1234
+      - MINIO_HOST=minio
+      - MINIO_PORT=9001
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - MINIO_BUCKET=code
+      - API_PORT=3000
     volumes:
       - ./code-api:/app
       - /app/node_modules
@@ -73,9 +75,9 @@ services:
     image: quay.io/minio/minio
     container_name: minio
     command: server --console-address ":9001" /data
-    expose:
-      - "9000"
-      - "9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
     networks:
       - backend
     environment:
@@ -83,6 +85,19 @@ services:
       MINIO_ROOT_PASSWORD: minioadmin
     volumes:
       - ./data/minio:/data
+  createbuckets:
+    image: minio/mc
+    depends_on:
+      - minio
+    networks:
+      - backend
+    entrypoint: >
+      /bin/sh -c "
+      /usr/bin/mc alias set myminio http://minio:9000/ minio_admin minio_admin;
+      /usr/bin/mc mb myminio/code;
+      /usr/bin/mc policy set public myminio/code;
+      exit 0;
+      "
 
   keycloak:
     image: quay.io/keycloak/keycloak:18.0.0
@@ -160,7 +175,7 @@ services:
       - KEYCLOAK_SERVER_URL=http://gitter.localhost/auth
       - KEYCLOAK_PROXY_URL=http://traefik:80
       - KEYCLOAK_CLIENT_ID=api-social
-      - KEYCLOAK_CLIENT_SECRET=h8lCO4plzKFfsong2crbHl7y1fhCykpl
+      - KEYCLOAK_CLIENT_SECRET=AzoICF0dvK8pfsJFto7Qso1AtA8ExWuB
       - SERVER_PORT=8081
       - LOG_LEVEL=INFO
     volumes:
