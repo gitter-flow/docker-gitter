@@ -100,7 +100,8 @@ services:
       "
 
   keycloak:
-    image: quay.io/keycloak/keycloak:18.0.0
+    build:
+      context: keycloak
     container_name: keycloak
     hostname: gitter.localhost
     labels:
@@ -109,7 +110,7 @@ services:
       - "traefik.http.routers.keycloak.entrypoints=web"
     command: 
       - 'start-dev'
-      - '--log-level=info'
+      - '--log-level=debug'
       - '--hostname=gitter.localhost'
       - '--http-port=8080'
       - '--http-relative-path=/auth'
@@ -175,7 +176,7 @@ services:
       - KEYCLOAK_SERVER_URL=http://gitter.localhost/auth
       - KEYCLOAK_PROXY_URL=http://traefik:80
       - KEYCLOAK_CLIENT_ID=api-social
-      - KEYCLOAK_CLIENT_SECRET=AzoICF0dvK8pfsJFto7Qso1AtA8ExWuB
+      - KEYCLOAK_CLIENT_SECRET=h8lCO4plzKFfsong2crbHl7y1fhCykpl
       - SERVER_PORT=8081
       - LOG_LEVEL=INFO
     volumes:
