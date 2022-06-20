@@ -47,6 +47,8 @@ services:
     build: 
       context: ${CODE_API_FOLDER}
       dockerfile: Dockerfile
+      cache_from:
+        - ""
       args:
         - PORT=3000
     entrypoint: "ts-node-dev"
@@ -93,21 +95,21 @@ services:
       - backend
     entrypoint: >
       /bin/sh -c "
-      /usr/bin/mc alias set myminio http://minio:9000/ minio_admin minio_admin;
+      /usr/bin/mc alias set myminio http://minio:9000/ minioadmin minioadmin;
       /usr/bin/mc mb myminio/code;
       /usr/bin/mc policy set public myminio/code;
       exit 0;
       "
 
   keycloak:
-    build:
-      context: keycloak
+    image: quay.io/keycloak/keycloak:18.0.0
     container_name: keycloak
     hostname: gitter.localhost
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.keycloak.rule=Host(`gitter.localhost`) && PathPrefix(`/auth`)"
       - "traefik.http.routers.keycloak.entrypoints=web"
+    entrypoint: /tmp/keycloak/config/entrypoint.sh
     command: 
       - 'start-dev'
       - '--log-level=debug'
@@ -124,9 +126,10 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: password
       SOCIAL_API_URL: http://social-api:8081
       PROXY_ADDRESS_FORWARDING: "true"
+      KEYCLOAK_IMPORT: /tmp/keycloak/config/realm.json
     volumes:
       - ./keycloak-event-listener/target/keycloak-event-listener-0.0.1.jar:/opt/keycloak/providers/keycloak-event-listener-0.0.1.jar
-      - ./keycloak/realm.json:/opt/keycloak_import/realm.json
+      - ./configs/keycloak:/tmp/keycloak/config/
     depends_on:
       - keycloak-db
     networks:
