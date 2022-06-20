@@ -24,6 +24,8 @@ services:
       dockerfile: Dockerfile
       args:
         - PORT=3000
+      cache_from:
+        - "node:lts-alpine3.15"
     entrypoint: npm
     command: start
     container_name: gitter-app
@@ -48,7 +50,7 @@ services:
       context: ${CODE_API_FOLDER}
       dockerfile: Dockerfile
       cache_from:
-        - ""
+        - "node:alpine3.14"
       args:
         - PORT=3000
     entrypoint: "ts-node-dev"
@@ -157,6 +159,9 @@ services:
     build: 
       context: ${SOCIAL_API_FOLDER}
       dockerfile: Dockerfile
+      cache_from:
+        - "maven:3.6.3-openjdk-17-slim"
+        - "openjdk:18.0.1-jdk"
     container_name: social-api
     labels:
       - "traefik.enable=true"
