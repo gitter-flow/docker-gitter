@@ -67,7 +67,7 @@ services:
       - OPENFAAS_USER=admin
       - OPENFAAS_PASSWORD=<to_set>
       - MINIO_HOST=minio
-      - MINIO_PORT=9001
+      - MINIO_PORT=9000
       - MINIO_ACCESS_KEY=minioadmin
       - MINIO_SECRET_KEY=minioadmin
       - MINIO_BUCKET=code
