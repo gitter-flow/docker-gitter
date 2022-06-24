@@ -130,6 +130,7 @@ services:
       SOCIAL_API_URL: http://social-api:8081
       PROXY_ADDRESS_FORWARDING: "true"
       KEYCLOAK_IMPORT: /tmp/keycloak/config/realm.json
+      KC_FEATURES: token-exchange
     volumes:
       - ./keycloak-event-listener/target/keycloak-event-listener-0.0.1.jar:/opt/keycloak/providers/keycloak-event-listener-0.0.1.jar
       - ./configs/keycloak:/tmp/keycloak/config/
