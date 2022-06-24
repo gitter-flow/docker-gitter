@@ -1,1 +1,0 @@
-{"buildTargets":[".PHONY",".SECONDARY",".env","_clone","all","banner","clear","clear-repo","clone","env","help","logs","make","make[1]","nuke-containers","ps","rm","token","up"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

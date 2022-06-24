@@ -40,6 +40,7 @@ services:
     environment:
       - SOCIAL_API_HOST=social-api
       - CHOKIDAR_USEPOLLING=true
+      - SOCIAL_API_PORT=3002
     volumes:
       - ./app:/app
       - /app/node_modules
@@ -63,9 +64,9 @@ services:
     networks:
       - "backend"
     environment:
-      - OPENFAAS_URL=<to_set>
+      - OPENFAAS_URL=https://dev.gitter.uk/
       - OPENFAAS_USER=admin
-      - OPENFAAS_PASSWORD=<to_set>
+      - OPENFAAS_PASSWORD=admin
       - MINIO_HOST=minio
       - MINIO_PORT=9000
       - MINIO_ACCESS_KEY=minioadmin
@@ -184,7 +185,7 @@ services:
       - KEYCLOAK_SERVER_URL=http://gitter.localhost/auth
       - KEYCLOAK_PROXY_URL=http://traefik:80
       - KEYCLOAK_CLIENT_ID=api-social
-      - KEYCLOAK_CLIENT_SECRET=h8lCO4plzKFfsong2crbHl7y1fhCykpl
+      - KEYCLOAK_CLIENT_SECRET=p5qF946qR025nFFuohYvPbIgR9WE94SH
       - SERVER_PORT=8081
       - LOG_LEVEL=INFO
     volumes:
