@@ -180,6 +180,7 @@ services:
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - DATABASE_NAME=${DATABASE_NAME}
       - APPLICATION_URL=http://localhost:3002
+      - APP_URL=http://gitter.localhost
       - KEYCLOAK_REALM_NAME=gitter
       - KEYCLOAK_SERVER_URL=http://gitter.localhost/auth
       - KEYCLOAK_PROXY_URL=http://traefik:80
