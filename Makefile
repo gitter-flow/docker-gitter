@@ -51,7 +51,12 @@ clear-repo: ## Remove cloned repositories
 .PHONY: clear-repo
 
 rm: ## Remove Gitter containers
+ifndef $(svc)
 	@docker-compose rm
+else
+	@docker rm -f $(svc)
+	@docker rmi -f docker-gitter_$(svc)
+endif
 .PHONY: rm
 
 up:  ## Run Gitter containers

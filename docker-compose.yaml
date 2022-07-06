@@ -52,15 +52,13 @@ services:
       dockerfile: Dockerfile
       cache_from:
         - "node:alpine3.14"
-      args:
-        - PORT=3000
     entrypoint: "ts-node-dev"
     command: 
       - --respawn
       - main.ts
     container_name: code-api
     ports:
-      - "3001:3000"
+      - "3001:3001"
     networks:
       - "backend"
     environment:
@@ -72,7 +70,7 @@ services:
       - MINIO_ACCESS_KEY=minioadmin
       - MINIO_SECRET_KEY=minioadmin
       - MINIO_BUCKET=code
-      - API_PORT=3000
+      - API_PORT=3001
     volumes:
       - ./code-api:/app
       - /app/node_modules
@@ -100,7 +98,9 @@ services:
       /bin/sh -c "
       /usr/bin/mc alias set myminio http://minio:9000/ minioadmin minioadmin;
       /usr/bin/mc mb myminio/code;
-      /usr/bin/mc policy set public myminio/code;
+      /usr/bin/mc version enable myminio/code;
+      /usr/bin/mc mb myminio/images;
+      /usr/bin/mc version enable myminio/images;
       exit 0;
       "
 
@@ -183,6 +183,7 @@ services:
       - DATABASE_NAME=${DATABASE_NAME}
       - APPLICATION_URL=http://localhost:3002
       - APP_URL=http://gitter.localhost
+      - CODE_API_URL=http://code-api:3001
       - KEYCLOAK_REALM_NAME=gitter
       - KEYCLOAK_SERVER_URL=http://gitter.localhost/auth
       - KEYCLOAK_PROXY_URL=http://traefik:80
