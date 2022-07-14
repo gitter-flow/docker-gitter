@@ -19,7 +19,7 @@ KEYCLOAK_EVENT_LISTENER_FOLDER=keycloak-event-listener
 
 KC_CLIENT_ID=api-social
 KC_CLIENT_SECRET=h8lCO4plzKFfsong2crbHl7y1fhCykpl
-KC_USERNAME=f@gmail.com
+KC_USERNAME=test
 KC_PASSWORD=password
 
 help: banner ## Show help for all targets
