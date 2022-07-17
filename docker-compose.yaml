@@ -189,6 +189,10 @@ services:
       - KEYCLOAK_PROXY_URL=http://traefik:80
       - KEYCLOAK_CLIENT_ID=api-social
       - KEYCLOAK_CLIENT_SECRET=p5qF946qR025nFFuohYvPbIgR9WE94SH
+      - MINIO_URL=http://minio:9000
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - BUCKET_PICTURE_NAME=images
       - SERVER_PORT=8081
       - LOG_LEVEL=INFO
     volumes:
