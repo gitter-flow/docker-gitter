@@ -61,6 +61,7 @@ services:
       - "3001:3001"
     networks:
       - "backend"
+    network_mode: "host"
     environment:
       - OPENFAAS_URL=https://dev.gitter.uk/
       - OPENFAAS_USER=admin
@@ -103,7 +104,6 @@ services:
       /usr/bin/mc version enable myminio/images;
       exit 0;
       "
-
   keycloak:
     image: quay.io/keycloak/keycloak:18.0.0
     container_name: keycloak
@@ -194,6 +194,7 @@ services:
       - MINIO_SECRET_KEY=minioadmin
       - BUCKET_PICTURE_NAME=images
       - SERVER_PORT=8081
+      - API_CONTEXT_PATH=/api/*
       - LOG_LEVEL=INFO
     volumes:
       - ./social-api:/app
