@@ -12,6 +12,9 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
+      - "traefik.http.middlewares.testHeader.headers.customrequestheaders.Access-Control-Allow-Origin: http://gitter.localhost"
+      - "traefik.http.middlewares.testHeader.headers.customrequestheaders.Access-Control-Allow-Credentials: true"
+
     ports:
       - "80:80"
       - "8082:8080"
@@ -41,6 +44,7 @@ services:
       - SOCIAL_API_HOST=social-api
       - CHOKIDAR_USEPOLLING=true
       - SOCIAL_API_PORT=3002
+      - REACT_APP_API_URL=http://api.gitter.localhost
     volumes:
       - ./app:/app
       - /app/node_modules
@@ -164,6 +168,11 @@ services:
       cache_from:
         - "maven:3.6.3-openjdk-17-slim"
         - "openjdk:18.0.1-jdk"
+    # entrypoint: java
+    # command:
+    # - -jar
+    # - -Dspring.profiles.active=dev
+    # - /usr/src/app/social-api-0.0.1-SNAPSHOT.jar
     container_name: social-api
     labels:
       - "traefik.enable=true"
