@@ -190,8 +190,8 @@ services:
       - DATABASE_USER=${DATABASE_USER}
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - DATABASE_NAME=${DATABASE_NAME}
-      - APPLICATION_URL=http://localhost:3002
-      - APP_URL=http://gitter.localhost
+      - APPLICATION_URL=http://gitter.localhost
+      - APP_URL=http://api.gitter.localhost
       - CODE_API_URL=http://code-api:3001
       - KEYCLOAK_REALM_NAME=gitter
       - KEYCLOAK_SERVER_URL=http://gitter.localhost/auth
