@@ -57,15 +57,14 @@ services:
       cache_from:
         - "node:alpine3.14"
     entrypoint: "ts-node-dev"
+    container_name: code-api
     command: 
       - --respawn
       - main.ts
-    container_name: code-api
     ports:
       - "3001:3001"
     networks:
       - "backend"
-    network_mode: "host"
     environment:
       - OPENFAAS_URL=https://dev.gitter.uk/
       - OPENFAAS_USER=admin
@@ -226,8 +225,4 @@ services:
 
 networks:
   frontend:
-    driver: bridge
-    ipam:
-      driver: default
   backend:
-    driver: bridge
