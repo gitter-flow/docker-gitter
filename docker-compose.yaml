@@ -66,7 +66,7 @@ services:
     networks:
       - "backend"
     environment:
-      - OPENFAAS_URL=https://dev.gitter.uk/
+      - OPENFAAS_URL=http://host.docker.internal:8085
       - OPENFAAS_USER=admin
       - OPENFAAS_PASSWORD=admin
       - MINIO_HOST=minio
